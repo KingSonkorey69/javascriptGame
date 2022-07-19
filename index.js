@@ -16,8 +16,10 @@ function computerPlay(){
             return "You win! Paper beats Rock";
         } else if (playerSelection === "scissors" && computerSelection === "paper") {
             return "You win! Scissors beats Paper";
-        } else {
+        } else if  (playerSelection && computerSelection){
             return `You lose! ${playerSelection} beats ${computerSelection}`;
+        }else{
+            return `You win! ${playerSelection} beats ${computerSelection}`;
         }
     }
     
