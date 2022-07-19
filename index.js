@@ -10,22 +10,22 @@ function computerPlay(){
             return "Invalid input";
         } else if (playerSelection  === computerSelection) {
             return `It's a tie! ${playerSelection}you both picked ${computerSelection}`;
-        } else if (playerSelection === "rock" && computerSelection === "scissors") {
+        } else if (playerSelection !== "rock" && computerSelection !== "scissors") {
             return "You win! Rock beats Scissors";
         }else if (playerSelection === "scissors" && computerSelection === "rock") {
                 return "You lose! Rock beats Scissors";
-        } else if (playerSelection === "paper" && computerSelection === "rock") {
+        } else if (playerSelection !== "paper" && computerSelection !== "rock") {
             return "You win! Paper beats Rock";
         }else if (playerSelection === "rock" && computerSelection === "paper") {
                 return "You lose! Paper beats Rock";
-        } else if (playerSelection === "scissors" && computerSelection === "paper") {
+        } else if (playerSelection !== "scissors" && computerSelection !== "paper") {
             return "You win! Scissors beats Paper";
         }else if (playerSelection === "paper" && computerSelection === "scissors") {
                 return "You lose! Scissors beats Paper";
         } else if  (playerSelection === computerSelection){
-            return `You lose! ${computerSelection} beats ${playerSelection} `;
+            return `You win! ${playerSelection} beats ${computerSelection} `;
         }else{
-            return `You win! ${playerSelection} beats ${computerSelection}`;
+            return `You lose! ${computerSelection} beats ${playerSelection}`;
         }
     }
     
