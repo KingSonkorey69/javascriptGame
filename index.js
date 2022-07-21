@@ -17,7 +17,7 @@ function playRound(playerSelection, computerSelection){
     if (playerSelection === computerSelection) {
         return "It's a Tie";
     }
-    if (playerSelection !== "rock" && playerSelection !== "scissors" && playerSelection !== "paper") {
+    if (playerSelection !== "rock" || playerSelection !== "scissors" || playerSelection !== "paper") {
         return "Invalid input";
     }
     if (playerSelection === "Rock") {
@@ -45,12 +45,12 @@ function game(){
     for(let i=0; i < 5; i++){
         const playerSelection = prompt("Rock, Paper, Scissors").toLowerCase();
         if(validInput(userInput) === false) {
-            alert("Wrong Input Retry");
+            console.log("Wrong Input Retry");
             game();
         }else{
             const computerSelection = computerPlay();
             const winner = playRound(playerSelection, computerSelection);
-            alert(`${winner}`);
+            console.log(`${winner}`);
         }
 
     }
