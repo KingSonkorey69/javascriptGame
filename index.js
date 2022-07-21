@@ -10,31 +10,36 @@ function computerPlay(){
             return false;
         }
     };
-    function playRound(playerSelection, computerSelection){
+function playRound(playerSelection, computerSelection){
         if (playerSelection == null || computerSelection == null) {
             return "Invalid input";
-        } else if (playerSelection !== "rock" && playerSelection !== "scissors" && playerSelection !== "paper") {
-            return "Invalid input";
-        }else if (playerSelection  === computerSelection) {
-            return `It's a tie! ${playerSelection}you both picked ${computerSelection}`;
-        } else if (playerSelection === "rock" && computerSelection === "scissors") {
-            return "You win! Rock beats Scissors";
-        // }else if (playerSelection === "scissors" && computerSelection === "rock") {
-        //         return "You lose! Rock beats Scissors";
-        } else if (playerSelection === "paper" && computerSelection === "rock") {
-            return "You win! Paper beats Rock";
-        // }else if (playerSelection === "rock" && computerSelection === "paper") {
-        //         return "You lose! Paper beats Rock";
-        } else if (playerSelection === "scissors" && computerSelection === "paper") {
-            return "You win! Scissors beats Paper";
-        // }else if (playerSelection === "paper" && computerSelection === "scissors") {
-        //         return "You lose! Scissors beats Paper";
-        } else if  (playerSelection === computerSelection){
-            return `You win! ${playerSelection} beats ${computerSelection} `;
-        }else{
-            return `You lose! ${computerSelection} beats ${playerSelection}`;
         }
-    }
+        if (playerSelection === computerSelection) {
+            return "It's a Tie";
+        }
+        if (playerSelection !== "rock" && playerSelection !== "scissors" && playerSelection !== "paper") {
+            return "Invalid input";
+        }
+        if (playerSelection === "Rock") {
+            if (computerSelection === "Scissors") {
+                return "You Win";
+            } else {
+                return "Computer Wins";
+            }
+        }else if (playerSelection === "Paper") {
+            if (computerSelection === "Rock") {
+                return "You Win";
+            } else {
+                return "Computer Wins";
+            }
+        }else {
+            if (computerSelection === "Paper") {
+                return "You Win";
+            } else {
+                return "Computer Wins";
+            }
+        }
+}
     
     function game(){
     
