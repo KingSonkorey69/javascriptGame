@@ -2,14 +2,14 @@ function computerPlay(){
     const start = ['Rock','Paper','Scissors'];
     return start[Math.floor(Math.random()*start.length)];
 } 
-// function validInput(userInput){
-//     userInput = userInput.toLowerCase();
-//     if(userInput === "rock"  && userInput === "scissors" && userInput === "paper"){
-//     return true;
-//     }else{
-//     return false;
-//     }
-// };
+function validInput(userInput){
+    userInput = userInput.toLowerCase();
+    if(userInput === "rock" ||  userInput === "scissors" || userInput === "paper"){
+    return true;
+    }else{
+    return false;
+    }
+};
 function playRound(playerSelection, computerSelection){
     if (playerSelection == null || computerSelection == null) {
         return "Invalid input";
@@ -44,13 +44,16 @@ function playRound(playerSelection, computerSelection){
 function game(){
     for(let i=0; i < 5; i++){
         const playerSelection = prompt("Rock, Paper, Scissors").toLowerCase();
-        // if(validInput(userInput) === false) {
-        //     userInput = prompt('Your selection is invalid! Retry!')
-        // };
-        const computerSelection = computerPlay();
-        const winner = playRound(playerSelection, computerSelection);
-        console.log(winner);
+        if(validInput(userInput) === false) {
+            alert("Wrong Input Retry");
+            game();
+        }else{
+            const computerSelection = computerPlay();
+            const winner = playRound(playerSelection, computerSelection);
+            alert(`${winner}`);
+        }
+
     }
     
+    
 }
-game();
