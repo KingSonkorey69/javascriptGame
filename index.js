@@ -9,7 +9,7 @@ function validInput(userInput){
     }else{
     return false;
     }
-};
+}
 function playRound(playerSelection, computerSelection){
     if (playerSelection == null || computerSelection == null) {
         return "Invalid input";
@@ -17,7 +17,7 @@ function playRound(playerSelection, computerSelection){
     if (playerSelection === computerSelection) {
         return "It's a Tie";
     }
-    if (playerSelection !== "rock" || playerSelection !== "scissors" || playerSelection !== "paper") {
+    if (playerSelection !== "rock" && playerSelection !== "scissors" && playerSelection !== "paper") {
         return "Invalid input";
     }
     if (playerSelection === "Rock") {
@@ -40,9 +40,9 @@ function playRound(playerSelection, computerSelection){
         }
     }
 }
-    
+let count = 5;
 function game(){
-    for(let i=0; i < 5; i++){
+    for(let i=0; i < count; i++){
         const playerSelection = prompt("Rock, Paper, Scissors").toLowerCase();
         if(validInput(userInput) === false) {
             console.log("Wrong Input Retry");
@@ -52,8 +52,5 @@ function game(){
             const winner = playRound(playerSelection, computerSelection);
             console.log(`${winner}`);
         }
-
-    }
-    
-    
+    }   
 }
