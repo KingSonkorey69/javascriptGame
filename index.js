@@ -40,8 +40,9 @@ function playRound(playerSelection, computerSelection){
         }
     }
 }
-let count = 5;
+
 function game(){
+    const count = 5;
     for(i=0; i < count; i++){
         const playerSelection = prompt("Rock, Paper, Scissors").toLowerCase();
         if(validInput(userInput) === false) {
