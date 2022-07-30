@@ -42,10 +42,10 @@ function playRound(playerSelection, computerSelection){
 }
 
 function game(){
-    const count = 5;
+    let count = 5;
     for(i=0; i < count; i++){
         const playerSelection = prompt("Rock, Paper, Scissors").toLowerCase();
-        if(validInput(userInput) === false) {
+        if(validInput(playerSelection) === false) {
             console.log("Wrong Input Retry");
             game();
         }else{
@@ -56,3 +56,4 @@ function game(){
         }
     }   
 }
+game();
